@@ -22,11 +22,10 @@
   <!-- Main Content -->
   <div class="container">
     <div class="row">
-      
       <div class="col-lg-8 col-md-10 mx-auto">
         <% for(let i=0; i < posts.length; i++) { %>
         <div class="post-preview">
-          <a href="/">
+          <a href="/posts/<%= posts[i]._id %>">
             <h2 class="post-title">
               <%= posts[i].title %>
             </h2>
@@ -36,7 +35,7 @@
           </a>
           <p class="post-meta">Posted by
             <a href="#">Ahmet Hakan Aydın</a>
-            <%= posts[i].dateCreated %></p>
+            <%= posts[i].dateCreated.toLocaleDateString("en-US") %></p>
             <hr>
         </div>
         <% } %>
@@ -55,5 +54,4 @@
   <%- include('partials/_footer.ejs') -%>
 
 </body>
-
 </html>
